@@ -56,6 +56,9 @@ jobs:
         run: |
           dotnet-sonarscanner begin /k:"${{ env.SONAR_PROJECT_KEY }}" /o:"${{ env.SONAR_ORGANIZATION_KEY }}" /d:sonar.qualitygate.wait=true /d:sonar.token="${{ env.SONAR_TOKEN }}" /d:sonar.cs.vscoveragexml.reportsPaths="**/TestResults/coverage.xml" /d:sonar.coverage.exclusions="**/Enrollment.Domain/**,**/Enrollment.Data/**,**/Enrollment.Spa.Flow/**"
 
+      - name: Restore Dependencies
+        run: dotnet restore
+
       - name: Run unit tests
         run: dotnet test --verbosity normal --configuration Release --results-directory ./TestResults/ \
           -- \

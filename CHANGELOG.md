@@ -1,3 +1,4 @@
+* 2026-09-04 - AB#224: Add explicit restore step.
 * 2026-09-04 - AB#224: Referencing strong named LogicBuilder.App.Spa.Business.
 * 2026-09-04 - AB#224: Add CI/CD workflows.
 * 2026-09-04 - AB#224: Add change log and code coverage configuration file.
