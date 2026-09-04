@@ -60,11 +60,7 @@ jobs:
         run: dotnet restore
 
       - name: Run unit tests
-        run: dotnet test --verbosity normal --configuration Release --results-directory ./TestResults/ \
-          -- \
-          --coverage \
-          --coverage-output-format xml \
-          --coverage-output coverage.xml
+        run: dotnet test --verbosity normal --configuration Release --results-directory ./TestResults/ -- --coverage --coverage-output-format xml --coverage-output coverage.xml
 
       - name: End SonarQube Cloud analysis
         env:
