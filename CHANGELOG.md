@@ -1,3 +1,4 @@
+* 2026-09-04 - AB#224: Remove settings file option.
 * 2026-09-04 - AB#224: Add explicit restore step.
 * 2026-09-04 - AB#224: Referencing strong named LogicBuilder.App.Spa.Business.
 * 2026-09-04 - AB#224: Add CI/CD workflows.
