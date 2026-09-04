@@ -1,3 +1,4 @@
+* 2026-09-04 - AB#224: Once again with coverage settings.
 * 2026-09-04 - AB#224: Copy command from LogicBuilder.App.Spa.Business.
 * 2026-09-04 - AB#224: Remove settings file option.
 * 2026-09-04 - AB#224: Add explicit restore step.
