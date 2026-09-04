@@ -1,0 +1,14 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="LogicBuilder.App.Spa.Utils/LogicBuilder.App.Spa.Utils.csproj" />
+  </Folder>
+  <Folder Name="/test/">
+    <Project Path="LogicBuilder.App.Spa.Utils.Tests/LogicBuilder.App.Spa.Utils.Tests.csproj" />
+  </Folder>
+  <Folder Name="/test/samples/">
+    <Project Path="Enrollment.Data/Enrollment.Data.csproj" />
+    <Project Path="Enrollment.Domain/Enrollment.Domain.csproj" />
+    <Project Path="Enrollment.Spa.Flow/Enrollment.Spa.Flow.csproj" />
+  </Folder>
+  <Folder Name="/_Solution Items/" />
+</Solution>

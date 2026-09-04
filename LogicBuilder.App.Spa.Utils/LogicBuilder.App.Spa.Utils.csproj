@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+		<PackageId>LogicBuilder.App.Spa.Utils</PackageId>
+		<Authors>BlaiseD</Authors>
+		<LangVersion>latest</LangVersion>
+		<Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+		<PackageReference Include="AutoMapper" Version="16.2.0" />
+    <PackageReference Include="LogicBuilder.App.Spa.Business" Version="1.0.0" />
+		<PackageReference Include="LogicBuilder.App.Spa.Forms.Parameters" Version="1.0.3" />
+		<PackageReference Include="LogicBuilder.App.Utils" Version="1.0.7" />
+		<PackageReference Include="LogicBuilder.RulesDirector" Version="2.0.6" />
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="10.0.11" />
+  </ItemGroup>
+
+</Project>
