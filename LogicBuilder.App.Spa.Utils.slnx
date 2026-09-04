@@ -10,5 +10,9 @@
     <Project Path="Enrollment.Domain/Enrollment.Domain.csproj" />
     <Project Path="Enrollment.Spa.Flow/Enrollment.Spa.Flow.csproj" />
   </Folder>
-  <Folder Name="/_Solution Items/" />
+  <Folder Name="/_Solution Items/">
+    <File Path="CHANGELOG.md" />
+    <File Path="CodeCoverage.runsettings" />
+    <File Path="global.json" />
+  </Folder>
 </Solution>
