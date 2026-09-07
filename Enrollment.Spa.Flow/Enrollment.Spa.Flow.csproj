@@ -59,6 +59,8 @@
     <None Remove="Rulesets\report.resources" />
     <None Remove="Rulesets\residency.module" />
     <None Remove="Rulesets\residency.resources" />
+    <None Remove="Rulesets\set_persistent_keys.module" />
+    <None Remove="Rulesets\set_persistent_keys.resources" />
   </ItemGroup>
 
   <ItemGroup>
@@ -114,6 +116,8 @@
     <EmbeddedResource Include="Rulesets\report.resources" />
     <EmbeddedResource Include="Rulesets\residency.module" />
     <EmbeddedResource Include="Rulesets\residency.resources" />
+    <EmbeddedResource Include="Rulesets\set_persistent_keys.module" />
+    <EmbeddedResource Include="Rulesets\set_persistent_keys.resources" />
   </ItemGroup>
 
 	<ItemGroup>
