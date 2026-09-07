@@ -9,6 +9,8 @@ using LogicBuilder.App.Spa.Utils.Interfaces;
 using LogicBuilder.RulesDirector;
 using Microsoft.Extensions.Logging;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Text.Json;
 
 namespace LogicBuilder.App.Spa.Utils
@@ -49,6 +51,7 @@ namespace LogicBuilder.App.Spa.Utils
         private FlowSettings FlowSettings
            => new
            (
+               GetPersistentFlowSetting(),
                ((Director)this.Director).FlowState,
                FlowDataCache.NavigationBar,
                FlowDataCache.ScreenSettings ?? throw new ArgumentException($"{nameof(FlowDataCache.ScreenSettings)}: {{60B6AFD1-2247-4775-BE99-F3F650A15B0F}}")
@@ -65,11 +68,8 @@ namespace LogicBuilder.App.Spa.Utils
         {
             try
             {
-                foreach (string key in FlowDataCache.PersistentKeys)
-                {
-                    if (navBarRequest.PersistentFlowItems.TryGetValue(key, out object? value))
-                        FlowDataCache.Items[key] = value;
-                }
+                foreach (KeyValuePair<string, object> kvp in navBarRequest.PersistentFlowItems)
+                    FlowDataCache.Items[kvp.Key] = kvp.Value;
 
                 FlowDataCache.RequestedFlowStage = new RequestedFlowStage
                 {
@@ -152,6 +152,7 @@ namespace LogicBuilder.App.Spa.Utils
         private FlowSettings GetFlowSettings(Exception ex)
             => new
             (
+                GetPersistentFlowSetting(),
                 ((Director)this.Director).FlowState,
                 FlowDataCache.NavigationBar,
                 new ScreenSettings<ExceptionView>
@@ -160,6 +161,18 @@ namespace LogicBuilder.App.Spa.Utils
                     [],
                     ViewType.Exception
                 )
+            );
+
+        private Dictionary<string, object> GetPersistentFlowSetting()
+            => FlowDataCache.PersistentKeys.Aggregate
+            (
+                new Dictionary<string, object>(), 
+                (dictionary, key) =>
+                {
+                    if (FlowDataCache.Items.TryGetValue(key, out object? value))
+                        dictionary.Add(key, value);
+                    return dictionary;
+                }
             );
     }
 }
