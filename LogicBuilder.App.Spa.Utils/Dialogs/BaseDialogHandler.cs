@@ -13,6 +13,8 @@ namespace LogicBuilder.App.Spa.Utils.Dialogs
             foreach (KeyValuePair<string, object> kvp in request.PersistentFlowItems)
                 flowManager.FlowDataCache.Items[kvp.Key] = kvp.Value;
 
+            flowManager.FlowDataCache.PersistentKeys = [.. request.PersistentFlowItems.Keys];
+
             ((Director)flowManager.Director).FlowState = request.FlowState ?? throw new ArgumentException($"{nameof(request.FlowState)}: {{3C808121-4B83-4633-A469-16AE4CF059C1}}");
             flowManager.Director.SetSelection(request.CommandButtonRequest?.NewSelection ?? throw new ArgumentException($"{nameof(request.CommandButtonRequest)}: {{F5B2A906-2E70-4A30-A114-12C9B544EB3F}}"));
         }

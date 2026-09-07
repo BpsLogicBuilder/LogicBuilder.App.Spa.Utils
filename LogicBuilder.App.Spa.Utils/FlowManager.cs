@@ -71,6 +71,8 @@ namespace LogicBuilder.App.Spa.Utils
                 foreach (KeyValuePair<string, object> kvp in navBarRequest.PersistentFlowItems)
                     FlowDataCache.Items[kvp.Key] = kvp.Value;
 
+                FlowDataCache.PersistentKeys = [.. navBarRequest.PersistentFlowItems.Keys];
+
                 FlowDataCache.RequestedFlowStage = new RequestedFlowStage
                 {
                     InitialModule = navBarRequest.InitialModuleName ?? throw new ArgumentException($"{nameof(navBarRequest.InitialModuleName)}: {{91027670-3D9A-444C-A1C9-03B19BC53C19}}"),

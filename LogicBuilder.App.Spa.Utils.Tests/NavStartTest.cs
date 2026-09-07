@@ -124,6 +124,7 @@ namespace LogicBuilder.App.Spa.Utils.Tests
             (
                 new GridRequest
                 {
+                    PersistentFlowItems = new Dictionary<string, object> { ["UserId"] = 1 },
                     CommandButtonRequest = new CommandButtonRequest { NewSelection = selectedButton.ShortString },
                     FlowState = ((Director)flowManager.Director).FlowState,
                     ViewType = ViewType.Grid
