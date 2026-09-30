@@ -18,6 +18,20 @@ namespace LogicBuilder.App.Spa.Utils.Interfaces
             ICollection<ConnectorParameters> buttons
         );
 
+        [AlsoKnownAs("DisplayChatForm")]
+        [FunctionGroup(FunctionGroup.DialogForm)]
+        void DisplayChatForm
+        (
+            [Comments("Configuration details for the chat form.")]
+            ChatFormSettingsParameters setting,
+
+            [Comments("Create or Edit")]
+            ViewType viewType,
+
+            [ListEditorControl(ListControlType.Connectors)]
+            ICollection<ConnectorParameters> buttons
+        );
+
         [AlsoKnownAs("DisplayEditForm")]
         [FunctionGroup(FunctionGroup.DialogForm)]
         void DisplayEditForm

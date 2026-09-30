@@ -27,6 +27,20 @@ namespace LogicBuilder.App.Spa.Utils
                 ViewType.Grid
             );
 
+        public void DisplayChatForm(ChatFormSettingsParameters setting, ViewType viewType, ICollection<ConnectorParameters> buttons)
+        {
+            this.flowDataCache.ScreenSettings = viewType switch
+            {
+                ViewType.Chat => new ScreenSettings<ChatFormSettingsDescriptor>
+                (
+                    mapper.Map<ChatFormSettingsDescriptor>(setting),
+                    mapper.Map<IEnumerable<ConnectorParameters>, IEnumerable<CommandButtonDescriptor>>(buttons),
+                    viewType
+                ),
+                _ => throw new ArgumentException($"{nameof(viewType)}: {{C5D92ADA-898B-4907-A43C-1475AC9DA3AD}}"),
+            };
+        }
+
         public void DisplayEditForm(EditFormSettingsParameters setting, ViewType viewType, ICollection<ConnectorParameters> buttons)
         {
             this.flowDataCache.ScreenSettings = viewType switch

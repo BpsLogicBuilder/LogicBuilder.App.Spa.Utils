@@ -12,5 +12,6 @@
         public const int MoreInfo = 7;
         public const int Certification = 8;
         public const int Report = 9;
+        public const int Chat = 10;
     }
 }
