@@ -21,6 +21,7 @@ namespace LogicBuilder.App.Spa.Utils.Tests
 
             // Act
             ChatFormSettingsParameters setting = new(
+                title: "Agent Chat",
                 agentConfigurationIdentifier: "knowledge-search-only",
                 chatHeight: 550,
                 chatWidth: 600,
