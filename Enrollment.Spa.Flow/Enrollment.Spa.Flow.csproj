@@ -129,12 +129,13 @@
   </ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="LogicBuilder.App.Spa.AutoMapperProfiles" Version="1.0.5-alpha.0.2" />
-		<PackageReference Include="LogicBuilder.App.Spa.Forms.Configuration" Version="1.0.3-alpha.0.4" />
-		<PackageReference Include="LogicBuilder.App.Spa.Forms.Parameters" Version="1.0.4-alpha.0.7" />
-		<PackageReference Include="LogicBuilder.App.Utils" Version="1.0.9-alpha.0.1" />
+		<PackageReference Include="LogicBuilder.App.Spa.AutoMapperProfiles" Version="1.0.5" />
+		<PackageReference Include="LogicBuilder.App.Spa.Forms.Configuration" Version="1.0.3" />
+		<PackageReference Include="LogicBuilder.App.Spa.Forms.Parameters" Version="1.0.4" />
+		<PackageReference Include="LogicBuilder.App.Utils" Version="1.0.8" />
 		<PackageReference Include="LogicBuilder.EntityFrameworkCore" Version="8.0.3" />
 		<PackageReference Include="LogicBuilder.RulesDirector" Version="2.0.6" />
+		<PackageReference Include="LogicBuilder.Structures" Version="8.1.1" />
 		<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="10.0.12" />
 	</ItemGroup>
 

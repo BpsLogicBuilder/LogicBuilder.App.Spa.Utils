@@ -1,3 +1,4 @@
+* 2026-10-06 - AB#231: Latest Spa.Forms.Parameters/Configuration for Agent Chat.
 * 2026-10-04 - AB#231: Add Title parameter to ChatFormSettings.
 * 2026-09-30 - AB#232: Add DisplayChatForm method.
 * 2026-09-07 - AB#210: Reset persistent keys on each request.
