@@ -41,7 +41,7 @@ namespace LogicBuilder.App.Spa.Utils.Tests
             IFlowManager flowManager = serviceProvider!.GetRequiredService<IFlowManager>();
 
             //act
-            var result = flowManager.NavStart(new NavBarRequest { InitialModuleName = initialFlow, TargetModule = 10 });
+            var result = flowManager.NavStart(new NavBarRequest { InitialModuleName = initialFlow, TargetModule = 11 });
 
             //assert
             Assert.Equal(ViewType.FlowComplete, result.ScreenSettings.ViewType);
@@ -102,8 +102,8 @@ namespace LogicBuilder.App.Spa.Utils.Tests
             Assert.Equal(9.5, (double)flowManager.FlowDataCache.Items["UserRating"]);
 
             Assert.Equal(1, (int)result.PersistentFlowItems["UserId"]);
-            Assert.False(result.PersistentFlowItems.ContainsKey("UserName"));
-            Assert.False(result.PersistentFlowItems.ContainsKey("UserRating"));
+            Assert.Equal("Smith101", result.PersistentFlowItems["UserName"]);
+            Assert.Equal(9.5 , result.PersistentFlowItems["UserRating"]);
             var screenSettings = Assert.IsType<ScreenSettings<EditFormSettingsDescriptor>>(result.ScreenSettings);
             Assert.Equal(ViewType.Edit, result.ScreenSettings.ViewType);
             Assert.Equal("Academic", screenSettings.Settings.Title);

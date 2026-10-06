@@ -24,6 +24,24 @@ namespace LogicBuilder.App.Spa.Utils
             customDialogs.DisplayGrid(setting, buttons);
         }
 
+        [AlsoKnownAs("DisplayChatForm")]
+        [FunctionGroup(FunctionGroup.DialogForm)]
+        public static void DisplayChatForm
+        (
+            ICustomDialogs customDialogs,
+            [Comments("Configuration details for the form.")]
+            ChatFormSettingsParameters setting,
+
+            [Comments("Create or Edit")]
+            ViewType viewType,
+
+            [ListEditorControl(ListControlType.Connectors)]
+            ICollection<ConnectorParameters> buttons
+        )
+        {
+            customDialogs.DisplayChatForm(setting, viewType, buttons);
+        }
+
         [AlsoKnownAs("DisplayEditForm")]
         [FunctionGroup(FunctionGroup.DialogForm)]
         public static void DisplayEditForm

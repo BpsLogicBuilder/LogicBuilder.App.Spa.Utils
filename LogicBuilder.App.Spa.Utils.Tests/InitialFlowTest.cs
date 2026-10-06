@@ -39,7 +39,7 @@ namespace LogicBuilder.App.Spa.Utils.Tests
             IFlowManager flowManager = serviceProvider!.GetRequiredService<IFlowManager>();
 
             //act
-            var result = flowManager.Start(initialFlow, 10);
+            var result = flowManager.Start(initialFlow, 11);
 
             //assert
             Assert.Equal(ViewType.FlowComplete, result.ScreenSettings.ViewType);
@@ -58,6 +58,21 @@ namespace LogicBuilder.App.Spa.Utils.Tests
             var screenSettings = Assert.IsType<ScreenSettings<HtmlPageSettingsDescriptor>>(result.ScreenSettings);
             Assert.Equal(ViewType.Html, result.ScreenSettings.ViewType);
             Assert.Equal("Charlotte School of Science", screenSettings.Settings.ContentTemplate?.Title);
+        }
+
+        [Fact]
+        public void FlowWithChatTarget_StopsAtChatScreen()
+        {
+            //arrange
+            IFlowManager flowManager = serviceProvider!.GetRequiredService<IFlowManager>();
+
+            //act
+            var result = flowManager.Start(initialFlow, TargetModules.Chat);
+
+            //assert
+            var screenSettings = Assert.IsType<ScreenSettings<ChatFormSettingsDescriptor>>(result.ScreenSettings);
+            Assert.Equal(ViewType.Chat, result.ScreenSettings.ViewType);
+            Assert.Equal(600, screenSettings.Settings.ChatWidth);
         }
 
         [Fact]
